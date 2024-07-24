@@ -1,5 +1,5 @@
 {
-    "name": "@local/lib",
+    "name": "@ptolemy2002/react-manual-error-handling",
     "version": "0.0.0",
     "main": "index.js",
     "files": [
@@ -7,7 +7,6 @@
     ],
     "scripts": {
         "build": "esbuild src/index.js --bundle --format=cjs --outfile=index.js --external:react --external:react-dom --external:@types/react --external:@types/react-dom",
-
         "postinstall": "npx typesync",
         "uninstall": "bash ./scripts/uninstall.sh",
         "reinstall": "bash ./scripts/reinstall.sh",
@@ -15,7 +14,6 @@
         "example-install": "bash ./scripts/example-install.sh",
         "example-reinstall": "bash ./scripts/example-reinstall.sh",
         "example-start": "bash ./scripts/example-start.sh",
-
         "release": "bash ./scripts/release.sh",
         "release-patch": "bash ./scripts/release.sh patch",
         "release-minor": "bash ./scripts/release.sh minor",
