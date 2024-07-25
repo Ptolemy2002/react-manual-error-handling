@@ -1,7 +1,7 @@
 import { ErrorBoundary, useErrorBoundary } from "react-error-boundary";
 import useManualErrorHandling from "@ptolemy2002/react-manual-error-handling";
 
-async function wait(ms) {
+async function errorDelay(ms) {
     return new Promise((_, reject) => {
         setTimeout(() => reject(new Error("Random error")), ms);
     });
@@ -21,7 +21,7 @@ export default App;
 
 function Main() {
     const { _try } = useManualErrorHandling();
-    const handleClick = async () => _try(() => wait(1000));
+    const handleClick = () => _try(() => errorDelay(1000));
 
     return (
         <button onClick={handleClick}>Click to throw an error after 1 second</button>

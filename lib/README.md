@@ -1,4 +1,30 @@
 # React Library CRA Template
+By default, [Error Boundaries](https://legacy.reactjs.org/docs/error-boundaries.html) do not catch errors thrown during event handlers or in asynchronous code. This hook is a basic one that allows you to redirect these errors through the use of state so that they are thrown by the component itself and caught by the boundary.
+
+The hook is exported as default, so you can import in one of the following ways:
+```
+// ES6
+import useForceRerender from '@ptolemy2002/react-force-rerender';
+// CommonJS
+const useForceRerender = require('@ptolemy2002/react-force-rerender');
+```
+
+When using the hook, you get two functions: `_try` and `_throw`. `_throw` simply needs to be called with an error as the only argument. `_try` is an async function itself that is called with a callback function as the only argument. It will attempt running the callback and use `_throw` if an error is thrown. The callback can be either a normal function or async. Here's an example of usage:
+
+```
+function Main() {
+    const { _try } = useManualErrorHandling();
+    const handleClick = () => _try(() => errorDelay(1000));
+
+    return (
+        <button onClick={handleClick}>Click to throw an error after 1 second</button>
+    );
+}
+```
+
+The `errorDelay` function is a simple function that throws an error after a delay. This example can be seen in action within the `example` app provided as part of the library's repository.
+
+## Meta
 This is a React Library Created by Ptolemy2002's [cra-template-react-library](https://www.npmjs.com/package/@ptolemy2002/cra-template-react-library) template in combination with [create-react-app](https://www.npmjs.com/package/create-react-app). It contains methods of building and publishing your library to npm.
 For now, the library makes use of React 18 and does not use TypeScript.
 

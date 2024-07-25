@@ -24,7 +24,7 @@
         "url": "https://github.com/Ptolemy2002/react-manual-error-handling",
         "directory": "lib"
     },
-    "description": "Example of a React library",
+    "description": "React Library to manually throw errors within async functions and event handlers",
     "license": "ISC",
     "peerDependencies": {
         "@types/react": "^18.3.3",
