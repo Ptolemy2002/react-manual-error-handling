@@ -1,4 +1,4 @@
-# React Library CRA Template
+# React Manual Error Handling
 By default, [Error Boundaries](https://legacy.reactjs.org/docs/error-boundaries.html) do not catch errors thrown during event handlers or in asynchronous code. This hook is a basic one that allows you to redirect these errors through the use of state so that they are thrown by the component itself and caught by the boundary.
 
 The hook is exported as default, so you can import in one of the following ways:
