@@ -4,9 +4,9 @@ By default, [Error Boundaries](https://legacy.reactjs.org/docs/error-boundaries.
 The hook is exported as default, so you can import in one of the following ways:
 ```
 // ES6
-import useForceRerender from '@ptolemy2002/react-force-rerender';
+import useManualErrorHandling from '@ptolemy2002/react-manual-error-handling';
 // CommonJS
-const useForceRerender = require('@ptolemy2002/react-force-rerender');
+const useManualErrorHandling = require('@ptolemy2002/react-manual-error-handling');
 ```
 
 When using the hook, you get two functions: `_try` and `_throw`. `_throw` simply needs to be called with an error as the only argument. `_try` is an async function itself that is called with a callback function as the only argument. It will attempt running the callback and use `_throw` if an error is thrown. The callback can be either a normal function or async. Here's an example of usage:
