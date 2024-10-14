@@ -1,7 +1,7 @@
 import { ErrorBoundary, useErrorBoundary } from "react-error-boundary";
 import useManualErrorHandling from "@ptolemy2002/react-manual-error-handling";
 
-async function errorDelay(ms) {
+function errorDelay(ms: number): Promise<never> {
     return new Promise((_, reject) => {
         setTimeout(() => reject(new Error("Random error")), ms);
     });
@@ -20,7 +20,7 @@ function App() {
 export default App;
 
 function Main() {
-    const { _try } = useManualErrorHandling();
+    const [_try] = useManualErrorHandling<never>();
     const handleClick = () => _try(() => errorDelay(1000));
 
     return (
