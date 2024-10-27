@@ -1,13 +1,10 @@
 import {useState, useCallback} from 'react';
-import HookResult from "@ptolemy2002/react-hook-result";
+import HookResult, {HookResultData} from "@ptolemy2002/react-hook-result";
+import { MaybePromise } from '@ptolemy2002/ts-utils';
 
-export type TryFunction<T> = (fn: () => Promise<T> | T) => Promise<T | void>;
+export type TryFunction<T> = (fn: () => MaybePromise<T>) => Promise<T | void>;
 export type ThrowFunction = (e: unknown) => void;
-export type UseManualErrorHandlingResult<T> =
-  HookResult<{_try: TryFunction<T>, _throw: ThrowFunction}, TryFunction<T> | ThrowFunction>
-  & {_try: TryFunction<T>, _throw: ThrowFunction}
-  & [TryFunction<T>, ThrowFunction]
-;
+export type UseManualErrorHandlingResult<T> = HookResultData<{ _try: TryFunction<T>, _throw: ThrowFunction }, readonly [TryFunction<T>, ThrowFunction]>;
 
 export default function useManualErrorHandling<T=any>(): UseManualErrorHandlingResult<T> {
   const [, setError] = useState<unknown>(null);

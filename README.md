@@ -54,6 +54,7 @@ None
 - `react^18.3.1`
 - `react-dom^18.3.1`
 - `@ptolemy2002/react-hook-result^2.1.1`
+- `@ptolemy2002/ts-utils^1.0.0`
 
 ## Commands
 The following commands exist in the project:

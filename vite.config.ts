@@ -24,7 +24,7 @@ export default defineConfig({
     copyPublicDir: false,
 
     rollupOptions: {
-      external: ['react', 'react-dom', "@ptolemy2002/react-hook-result"],
+      external: ['react', 'react-dom', "@ptolemy2002/react-hook-result", "@ptolemy2002/ts-utils"],
       output: {
         entryFileNames: '[name].js'
       }
